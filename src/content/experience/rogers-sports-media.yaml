@@ -1,0 +1,77 @@
+company: "Rogers Sports & Media"
+title: "Ad Tech and Product Specialist"
+dateRange: "Apr 2023 – Present"
+location: "Toronto, Ontario, Canada"
+keyProducts:
+  - Sportsnet
+  - CityNews
+  - CityTV
+
+overview: >
+  Programmatic ad tech specialist managing omnichannel ad infrastructure across Sportsnet, CityNews,
+  and CityTV. Works closely with developers and external vendors to create, test, and launch ad
+  products, and leads deep-dive investigations into ad delivery issues across the inventory backend.
+
+stack:
+  - Google Ad Manager (GAM)
+  - Magnite
+  - SSP/DSP integrations
+  - VAST/VMAP
+  - Charles Proxy
+  - BigQuery
+
+caseStudies:
+  - title: "Programmatic Integrations"
+    problem: >
+      TODO — replace with one specific integration or monetization gap: Rogers' omnichannel properties
+      (Sportsnet, CityNews, CityTV) needed programmatic infrastructure optimized across ad servers
+      (GAM, Magnite) and exchanges. Pick a single integration to walk through here rather than
+      describing the responsibility in general.
+    approach: >
+      TODO — the specific technical steps taken: which systems were touched, what was configured,
+      built, or changed, and why.
+    outcome: >
+      TODO — the measurable result: e.g. fill rate, revenue, or reliability improvement from this
+      specific integration.
+    details: >
+      TODO — full write-up: the situation in more depth, what made it technically tricky, and what
+      you'd do differently next time.
+
+  - title: "Technical Troubleshooting"
+    problem: >
+      TODO — replace with one specific incident: a client-side or server-side ad delivery issue,
+      VAST/VMAP error, or tracking discrepancy that needed root-causing.
+    approach: >
+      TODO — how BigQuery, SSP raw logs, Charles Proxy, and browser developer tools were used to
+      trace the issue to its root cause.
+    outcome: >
+      TODO — what was fixed, and the measurable impact (e.g. error rate reduced, delivery restored,
+      time to resolution).
+    details: >
+      TODO — full write-up of the debugging process, step by step.
+
+  - title: "Workflow Automation"
+    problem: >
+      Reporting across 200+ digital properties was a manual bottleneck, limiting data transparency
+      for the team.
+    approach: >
+      Identified the bottleneck and developed an automated web-scraping solution covering all 200+
+      properties.
+    outcome: >
+      Significantly improved data transparency and reporting efficiency. TODO — add a specific
+      metric once available (e.g. hours saved per week, error rate before/after).
+    details: >
+      TODO — full write-up: what the manual process looked like before, how the scraper was built
+      (tools/approach), and any concrete numbers on time saved or reliability gained.
+
+  - title: "Cross-Functional Product Launches"
+    problem: >
+      TODO — replace with one specific product launch: Sales and engineering needed a technical ad
+      product built and shipped. Pick a single launch to walk through.
+    approach: >
+      TODO — your specific role partnering with Sales/engineering on this launch: what you owned,
+      decisions you made.
+    outcome: >
+      TODO — the result of the launch: adoption, revenue, or product outcome.
+    details: >
+      TODO — full write-up of the launch process.

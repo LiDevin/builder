@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('experience');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { company, title, dateRange, location, keyProducts, keyAccounts, overview, stack, caseStudies } =
+  entry.data;
+---
+
+<Layout title={`${title} — ${company}`} description={overview}>
+  <a class="back-link" href="/">&larr; Back</a>
+
+  <h1>{title}</h1>
+  <p class="role-meta">{company} &middot; {dateRange} &middot; {location}</p>
+  <p class="key-products">Key products: {keyProducts.join(', ')}</p>
+  {keyAccounts && <p class="key-products">Key accounts: {keyAccounts.join(', ')}</p>}
+
+  <p>{overview}</p>
+
+  <h2>Tools &amp; Stack</h2>
+  <ul class="stack-list">
+    {stack.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h2>Case Studies</h2>
+  {caseStudies.map((caseStudy) => (
+    <article class="case-study">
+      <h3>{caseStudy.title}</h3>
+      <p><strong>Problem:</strong> {caseStudy.problem}</p>
+      <p><strong>Approach:</strong> {caseStudy.approach}</p>
+      <p><strong>Outcome:</strong> {caseStudy.outcome}</p>
+      {caseStudy.details && (
+        <details>
+          <summary>Read more</summary>
+          <p>{caseStudy.details}</p>
+        </details>
+      )}
+    </article>
+  ))}
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-block;
+    margin-bottom: var(--space-3);
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .role-meta,
+  .key-products {
+    color: var(--color-text-muted);
+    margin-top: 0;
+  }
+
+  .stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    padding: 0;
+    list-style: none;
+  }
+
+  .stack-list li {
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .case-study {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-3);
+  }
+
+  .case-study:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .case-study h3 {
+    margin-block-end: var(--space-1);
+  }
+
+  .case-study p {
+    margin-block: 0.375rem;
+  }
+
+  details {
+    margin-top: var(--space-1);
+  }
+
+  details summary {
+    cursor: pointer;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+  }
+</style>
