@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Ad tech professional portfolio.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-header__brand" href="/">Devin Li</a>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; {new Date().getFullYear()} Devin Li</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    padding-block: var(--space-2);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-header__brand {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  main {
+    padding-block: var(--space-4);
+    min-height: 60vh;
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-3);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+</style>
