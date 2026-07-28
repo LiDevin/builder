@@ -19,6 +19,8 @@ stack:
   - VAST/VMAP
   - Charles Proxy
   - BigQuery
+  - JavaScript
+  - Rich media ad formats
 
 caseStudies:
   - title: "Programmatic Integrations"
@@ -66,12 +68,17 @@ caseStudies:
 
   - title: "Cross-Functional Product Launches"
     problem: >
-      TODO — replace with one specific product launch: Sales and engineering needed a technical ad
-      product built and shipped. Pick a single launch to walk through.
+      Sponsorship and rich media placements (badges, wallpaper units, homepage takeovers) needed
+      to work across many different page sections on Rogers' properties, each with its own layout
+      — a single static creative wouldn't render correctly everywhere it needed to run.
     approach: >
-      TODO — your specific role partnering with Sales/engineering on this launch: what you owned,
-      decisions you made.
+      Built and maintained the JavaScript creative template that runs inside the ad iframe: it
+      amends the host page's DOM directly — toggling elements between display: none and block,
+      injecting the sponsorship image and text — branching its logic per placement to handle each
+      section's distinct structure.
     outcome: >
-      TODO — the result of the launch: adoption, revenue, or product outcome.
+      TODO — add a specific metric once available (e.g. number of sections/placements supported,
+      reduction in one-off dev requests for new creative variants).
     details: >
-      TODO — full write-up of the launch process.
+      TODO — full write-up: specific placements/sections handled, and how new creative variants
+      get added to the template today.
