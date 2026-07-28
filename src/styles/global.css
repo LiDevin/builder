@@ -1,12 +1,20 @@
 :root {
   --color-bg: #ffffff;
+  --color-surface: #f6f7fb;
   --color-text: #1a1d21;
   --color-text-muted: #5a6169;
   --color-border: #e3e6e9;
   --color-accent: #2454ff;
+  --color-accent-hover: #1a3fc4;
   --color-accent-contrast: #ffffff;
 
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+  --shadow-sm-hover: 0 2px 4px rgba(16, 24, 40, 0.06), 0 4px 8px rgba(16, 24, 40, 0.08);
+  --transition-fast: 0.15s ease;
+
+  --font-sans: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-weight-muted: 450;
 
   --content-width: 42rem;
   --space-1: 0.5rem;
@@ -44,6 +52,11 @@ svg {
 
 a {
   color: var(--color-accent);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
 }
 
 .container {
@@ -57,4 +70,32 @@ h1,
 h2,
 h3 {
   line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  position: relative;
+  padding-left: var(--space-2);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 0.1875rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+}
+
+h3 {
+  font-weight: 600;
 }

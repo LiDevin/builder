@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/inter';
 import '../styles/global.css';
 
 interface Props {
@@ -15,12 +16,16 @@ const { title, description = 'Ad tech professional portfolio.' } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
   <body>
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="site-header__brand" href="/">Devin Li</a>
+        <a class="site-header__brand" href="/">
+          <span class="site-header__monogram" aria-hidden="true">DL</span>
+          Devin Li
+        </a>
       </div>
     </header>
     <main class="container">
@@ -37,7 +42,7 @@ const { title, description = 'Ad tech professional portfolio.' } = Astro.props;
 <style>
   .site-header {
     border-bottom: 1px solid var(--color-border);
-    padding-block: var(--space-2);
+    padding-block: var(--space-3);
   }
 
   .site-header__inner {
@@ -47,9 +52,32 @@ const { title, description = 'Ad tech professional portfolio.' } = Astro.props;
   }
 
   .site-header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
     font-weight: 600;
     text-decoration: none;
     color: var(--color-text);
+  }
+
+  /* Brand/logo link, not a body-content link — keep its text color steady
+     on hover instead of inheriting the global accent hover color. */
+  .site-header__brand:hover {
+    color: var(--color-text);
+  }
+
+  .site-header__monogram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.375rem;
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   main {
@@ -61,6 +89,7 @@ const { title, description = 'Ad tech professional portfolio.' } = Astro.props;
     border-top: 1px solid var(--color-border);
     padding-block: var(--space-3);
     color: var(--color-text-muted);
+    font-weight: var(--font-weight-muted);
     font-size: 0.875rem;
   }
 </style>

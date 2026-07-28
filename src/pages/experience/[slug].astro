@@ -32,20 +32,22 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
   </ul>
 
   <h2>Case Studies</h2>
-  {caseStudies.map((caseStudy) => (
-    <article class="case-study">
-      <h3>{caseStudy.title}</h3>
-      <p><strong>Problem:</strong> {caseStudy.problem}</p>
-      <p><strong>Approach:</strong> {caseStudy.approach}</p>
-      <p><strong>Outcome:</strong> {caseStudy.outcome}</p>
-      {caseStudy.details && (
-        <details>
-          <summary>Read more</summary>
-          <p>{caseStudy.details}</p>
-        </details>
-      )}
-    </article>
-  ))}
+  <div class="case-study-list">
+    {caseStudies.map((caseStudy) => (
+      <article class="case-study">
+        <h3>{caseStudy.title}</h3>
+        <p><strong>Problem:</strong> {caseStudy.problem}</p>
+        <p><strong>Approach:</strong> {caseStudy.approach}</p>
+        <p><strong>Outcome:</strong> {caseStudy.outcome}</p>
+        {caseStudy.details && (
+          <details>
+            <summary>Read more</summary>
+            <p>{caseStudy.details}</p>
+          </details>
+        )}
+      </article>
+    ))}
+  </div>
 </Layout>
 
 <style>
@@ -58,6 +60,7 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
 
   .role-meta {
     color: var(--color-text-muted);
+    font-weight: var(--font-weight-muted);
     margin-top: 0;
   }
 
@@ -73,19 +76,34 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
     border: 1px solid var(--color-border);
     border-radius: 0.25rem;
     padding: 0.125rem 0.625rem;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
     font-size: 0.875rem;
   }
 
-  .case-study {
-    border-top: 1px solid var(--color-border);
-    padding-block: var(--space-3);
+  .case-study-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
   }
 
-  .case-study:last-child {
-    border-bottom: 1px solid var(--color-border);
+  .case-study {
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-3);
+    transition: box-shadow var(--transition-fast);
+  }
+
+  /* Subtle lift on hover for tactile feedback — no color/cursor change,
+     since this card isn't a link. */
+  .case-study:hover {
+    box-shadow: var(--shadow-sm-hover);
   }
 
   .case-study h3 {
+    margin-block-start: 0;
     margin-block-end: var(--space-1);
   }
 
@@ -101,5 +119,10 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
     cursor: pointer;
     color: var(--color-accent);
     font-size: 0.875rem;
+    transition: color var(--transition-fast);
+  }
+
+  details summary:hover {
+    color: var(--color-accent-hover);
   }
 </style>
