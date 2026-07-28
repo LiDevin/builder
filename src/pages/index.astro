@@ -1,8 +1,99 @@
 ---
+import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+
+// Explicit reverse-chronological order — two entries don't need a generic
+// date-sorting mechanism, the order is just authored here.
+const roleEntries = await Promise.all([
+  getEntry('experience', 'rogers-sports-media'),
+  getEntry('experience', 'dentsu-international'),
+]);
+
+const roles = roleEntries.map((entry) => {
+  if (!entry) {
+    throw new Error('Home page references a missing experience entry');
+  }
+  return entry;
+});
+
+const email = 'devinlky@gmail.com';
+const linkedInUrl = 'https://www.linkedin.com/in/devin-l-aaa08117a/';
 ---
 
-<Layout title="Devin Li">
+<Layout
+  title="Devin Li"
+  description="Programmatic ad tech specialist focused on ad delivery, SSP/DSP integrations, and technical troubleshooting."
+>
   <h1>Devin Li</h1>
-  <p>Site under construction.</p>
+  <p class="tagline">
+    Programmatic ad tech specialist focused on ad delivery, SSP/DSP integrations, and technical
+    troubleshooting.
+  </p>
+  <p>
+    I work at the intersection of ad operations and engineering — diagnosing delivery issues down
+    to the ad request/response level, managing SSP/DSP integrations across Google Ad Manager and
+    Magnite, and partnering with developers and vendors to build and launch ad products.
+  </p>
+
+  <h2>Experience</h2>
+  <ul class="role-list">
+    {roles.map((role) => (
+      <li>
+        <a class="role-card" href={`/experience/${role.id}`}>
+          <span class="role-card__title">{role.data.title} — {role.data.company}</span>
+          <span class="role-card__meta">{role.data.dateRange}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <h2>Contact</h2>
+  <ul class="contact-list">
+    <li><a href={`mailto:${email}`}>{email}</a></li>
+    <li><a href={linkedInUrl}>LinkedIn</a></li>
+  </ul>
 </Layout>
+
+<style>
+  .tagline {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+  }
+
+  .role-list,
+  .contact-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .role-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .role-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-1);
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    padding: var(--space-2);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .role-card__title {
+    font-weight: 600;
+  }
+
+  .role-card__meta {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+
+  .contact-list li {
+    margin-block: 0.25rem;
+  }
+</style>
