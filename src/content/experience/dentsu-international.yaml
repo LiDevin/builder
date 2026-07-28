@@ -1,0 +1,68 @@
+company: "dentsu international"
+title: "Media Planner"
+dateRange: "Aug 2022 – Apr 2023"
+location: "Toronto, Ontario, Canada"
+keyAccounts:
+  - Dairy Queen
+  - Galderma
+  - United Way Greater Toronto
+  - British Council
+  - Blue Insurance
+
+overview: >
+  Media planner executing multi-market full-funnel programmatic campaigns across APAC and North
+  America for global brands, combining strategic client advisory with data-driven reporting
+  automation to keep teams and clients aligned on performance in real time.
+
+stack:
+  - DV360
+  - Google Ads
+  - Facebook Ads Manager
+  - BigQuery
+  - Data Studio
+  - Programmatic buying
+
+caseStudies:
+  - title: "DSP Management"
+    problem: >
+      TODO — replace with one specific campaign or market challenge: multi-market full-funnel
+      programmatic campaigns needed executing across DV360, Google Ads, and Facebook Ads Manager
+      for global brands across Asia-Pacific and North America. Pick a single campaign to walk
+      through rather than describing the responsibility in general.
+    approach: >
+      TODO — the specific execution steps: platform setup, targeting/bidding decisions, and any
+      market-specific adjustments made.
+    outcome: >
+      TODO — the measurable result: e.g. conversion lift, budget efficiency, or performance
+      against the campaign's goal.
+    details: >
+      TODO — full write-up: the situation in more depth, what made it tricky across markets, and
+      what you'd do differently next time.
+
+  - title: "Performance Advisory"
+    problem: >
+      TODO — replace with one specific client engagement: an international client needed a
+      performance review translated into actionable recommendations to improve online
+      conversion. Pick a single client/review to walk through.
+    approach: >
+      TODO — how the campaign metrics were analyzed and which specific recommendations were made.
+    outcome: >
+      TODO — the measurable result: e.g. conversion improvement, client retention or budget
+      expansion.
+    details: >
+      TODO — full write-up of the advisory process.
+
+  - title: "Automated Reporting"
+    problem: >
+      Multi-market campaign data was fragmented across APAC and North America, requiring manual
+      workflows to piece together insights.
+    approach: >
+      Centralized the data using BigQuery and Data Studio, building automated dashboards to
+      replace the manual process.
+    outcome: >
+      Eliminated manual reporting workflows and delivered real-time insights across APAC and NA
+      markets. TODO — add a specific metric once available (e.g. hours saved per week, number of
+      markets/campaigns covered).
+    details: >
+      TODO — full write-up: what the manual process looked like before, how the dashboards were
+      built (tools/approach), and any concrete numbers on time saved or reliability gained.

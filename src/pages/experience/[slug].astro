@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import OptionalTagLine from '../../components/OptionalTagLine.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('experience');
@@ -20,8 +21,8 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
 
   <h1>{title}</h1>
   <p class="role-meta">{company} &middot; {dateRange} &middot; {location}</p>
-  <p class="key-products">Key products: {keyProducts.join(', ')}</p>
-  {keyAccounts && <p class="key-products">Key accounts: {keyAccounts.join(', ')}</p>}
+  <OptionalTagLine label="Key products" items={keyProducts} />
+  <OptionalTagLine label="Key accounts" items={keyAccounts} />
 
   <p>{overview}</p>
 
@@ -55,8 +56,7 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
     text-decoration: none;
   }
 
-  .role-meta,
-  .key-products {
+  .role-meta {
     color: var(--color-text-muted);
     margin-top: 0;
   }

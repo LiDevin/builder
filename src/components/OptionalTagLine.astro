@@ -1,0 +1,21 @@
+---
+interface Props {
+  label: string;
+  items?: string[];
+}
+
+const { label, items } = Astro.props;
+---
+
+{items && (
+  <p class="tag-line">
+    {label}: {items.join(', ')}
+  </p>
+)}
+
+<style>
+  .tag-line {
+    color: var(--color-text-muted);
+    margin-top: 0;
+  }
+</style>

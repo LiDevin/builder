@@ -17,7 +17,7 @@ const experience = defineCollection({
     title: z.string(),
     dateRange: z.string(),
     location: z.string(),
-    keyProducts: z.array(z.string()),
+    keyProducts: z.array(z.string()).optional(),
     keyAccounts: z.array(z.string()).optional(),
     overview: z.string(),
     stack: z.array(z.string()),
