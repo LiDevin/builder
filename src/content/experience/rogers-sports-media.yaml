@@ -23,6 +23,8 @@ stack:
   - BigQuery
   - JavaScript
   - Rich media ad formats
+  - Git
+  - ads.txt / sellers.json
 
 caseStudies:
   - title: "Programmatic Integrations"
@@ -49,6 +51,7 @@ caseStudies:
     details:
       - "A similar issue: Sportsnet's redesign from infinite scroll to a single-article layout broke the Slimcut video player."
       - "Fixed by updating the ad rule JS so the player inserted correctly in the new layout."
+      - "Also uses the command line (ls, cd, mkdir) to run a developer-built function that manually refreshes site cache when needed."
 
   - title: "Live Video Ad Troubleshooting"
     problem: >
@@ -88,3 +91,17 @@ caseStudies:
       redesign that introduces a new layout.
     details:
       - "A new layout isn't a rewrite — it's a new branch of logic added to the existing template."
+
+  - title: "Supply Chain File Management"
+    problem: >
+      Rogers' own ads.txt/sellers.json (hosted on Akamai) and partner publishers' ads.txt files
+      needed to stay accurate as inventory relationships changed — errors here can break
+      programmatic monetization for the affected inventory.
+    approach: >
+      For Rogers' own files, used an internal developer-built tool to push updates to Akamai. For
+      partner publishers, managed the files through an internal git-backed tool: committed changes
+      via VS Code's Git integration and merged to the main branch, which published an updated
+      summary site to share directly with each partner.
+    outcome: >
+      Kept supply chain declarations accurate for Rogers' own inventory and multiple partner
+      publishers, using a real git-based publishing workflow.
