@@ -68,12 +68,9 @@ caseStudies:
       pulled from Brightcove (the video platform). Flagged the correct values to the developer to
       fix.
     outcome: >
-      Pre-roll ads resumed serving normally on LiveTracker. TODO — add a specific metric once
-      available (e.g. how long the issue had been live, or estimated impressions/revenue
-      recovered).
-    details: >
-      TODO — full write-up: how the undefined ad unit path and the Brightcove video ID mismatch
-      were connected, and any monitoring added afterward to catch similar issues earlier.
+      Pre-roll ads resumed serving normally on LiveTracker. Reported by the LiveTracker product
+      manager rather than caught through internal monitoring; resolved as a one-off fix, and
+      monitored impression numbers for the following week to confirm the fix held.
 
   - title: "Workflow Automation"
     problem: >
