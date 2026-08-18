@@ -25,31 +25,24 @@ stack:
 caseStudies:
   - title: "DSP Management"
     problem: >
-      TODO — replace with one specific campaign or market challenge: multi-market full-funnel
-      programmatic campaigns needed executing across DV360, Google Ads, and Facebook Ads Manager
-      for global brands across Asia-Pacific and North America. Pick a single campaign to walk
-      through rather than describing the responsibility in general.
+      A British Council campaign was under-pacing at its existing bid — holding the same brand
+      exposure would need more budget.
     approach: >
-      TODO — the specific execution steps: platform setup, targeting/bidding decisions, and any
-      market-specific adjustments made.
+      Investigated the cause: the 11.11 e-commerce festival was drawing aggressive retail
+      advertisers into a similar audience pool, driving up competition. Recommended shifting
+      budget toward retargeting for the festival period instead of raising bids.
     outcome: >
-      TODO — the measurable result: e.g. conversion lift, budget efficiency, or performance
-      against the campaign's goal.
-    details:
-      - "TODO — the situation in more depth, what made it tricky across markets."
+      Held brand exposure at lower cost and exceeded the year-end online conversion target.
 
   - title: "Performance Advisory"
     problem: >
-      TODO — replace with one specific client engagement: an international client needed a
-      performance review translated into actionable recommendations to improve online
-      conversion. Pick a single client/review to walk through.
+      Blue Insurance wanted more completed online quotations, but cost per acquisition (CPA) was
+      too high.
     approach: >
-      TODO — how the campaign metrics were analyzed and which specific recommendations were made.
+      Added floodlight tracking to each step of the quotation flow, then retargeted users with a
+      different bidding strategy based on where they dropped off.
     outcome: >
-      TODO — the measurable result: e.g. conversion improvement, client retention or budget
-      expansion.
-    details:
-      - "TODO — the advisory process in more depth."
+      More precise bidding and a lower CPA.
 
   - title: "Automated Reporting"
     problem: >
@@ -59,8 +52,4 @@ caseStudies:
       Centralized the data using BigQuery and Data Studio, building automated dashboards to
       replace the manual process.
     outcome: >
-      Eliminated manual reporting workflows and delivered real-time insights across APAC and NA
-      markets. TODO — add a specific metric once available (e.g. hours saved per week, number of
-      markets/campaigns covered).
-    details:
-      - "TODO — what the manual process looked like before, and how the dashboards were built."
+      Cut report turnaround from about a week to one day.
