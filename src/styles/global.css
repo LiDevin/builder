@@ -7,6 +7,8 @@
   --color-accent: #2454ff;
   --color-accent-hover: #1a3fc4;
   --color-accent-contrast: #ffffff;
+  --color-accent-faint: rgba(36, 84, 255, 0.14);
+  --color-accent-mid: rgba(36, 84, 255, 0.4);
 
   --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
   --shadow-sm-hover: 0 2px 4px rgba(16, 24, 40, 0.06), 0 4px 8px rgba(16, 24, 40, 0.08);

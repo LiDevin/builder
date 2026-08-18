@@ -36,9 +36,27 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
     {caseStudies.map((caseStudy) => (
       <article class="case-study">
         <h3>{caseStudy.title}</h3>
-        <p><strong>Problem:</strong> {caseStudy.problem}</p>
-        <p><strong>Approach:</strong> {caseStudy.approach}</p>
-        <p><strong>Outcome:</strong> {caseStudy.outcome}</p>
+        <div class="stage stage--problem">
+          <div class="stage__bar"></div>
+          <div class="stage__body">
+            <span class="stage__label">Problem</span>
+            <p class="stage__text">{caseStudy.problem}</p>
+          </div>
+        </div>
+        <div class="stage stage--approach">
+          <div class="stage__bar"></div>
+          <div class="stage__body">
+            <span class="stage__label">Approach</span>
+            <p class="stage__text">{caseStudy.approach}</p>
+          </div>
+        </div>
+        <div class="stage stage--outcome">
+          <div class="stage__bar"></div>
+          <div class="stage__body">
+            <span class="stage__label">Outcome</span>
+            <p class="stage__text">{caseStudy.outcome}</p>
+          </div>
+        </div>
         {caseStudy.details && (
           <details>
             <summary>Read more</summary>
@@ -109,8 +127,50 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
     margin-block-end: var(--space-1);
   }
 
-  .case-study p {
-    margin-block: 0.375rem;
+  .stage {
+    display: flex;
+    gap: var(--space-2);
+    padding-block: 0.625rem;
+  }
+
+  .stage + .stage {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .stage__bar {
+    flex: none;
+    width: 3px;
+    border-radius: 999px;
+  }
+
+  .stage--problem .stage__bar {
+    background: var(--color-accent-faint);
+  }
+
+  .stage--approach .stage__bar {
+    background: var(--color-accent-mid);
+  }
+
+  .stage--outcome .stage__bar {
+    background: var(--color-accent);
+  }
+
+  .stage__body {
+    flex: 1;
+  }
+
+  .stage__label {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .stage__text {
+    margin: 0;
   }
 
   details {

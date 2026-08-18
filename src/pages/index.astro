@@ -18,6 +18,18 @@ const roles = roleEntries.map((entry) => {
 
 const email = 'devinlky@gmail.com';
 const linkedInUrl = 'https://www.linkedin.com/in/devin-l-aaa08117a/';
+
+const skills = [
+  'Google Ad Manager',
+  'Magnite',
+  'DV360',
+  'OpenRTB',
+  'VAST/VMAP',
+  'BigQuery',
+  'SSP/DSP Integrations',
+  'Workflow Automation',
+  'Rich Media',
+];
 ---
 
 <Layout
@@ -36,10 +48,9 @@ const linkedInUrl = 'https://www.linkedin.com/in/devin-l-aaa08117a/';
     across APAC and North America for global brands.
   </p>
   <h2>Skills</h2>
-  <p class="skills-line">
-    Google Ad Manager &middot; Magnite &middot; DV360 &middot; OpenRTB &middot; VAST/VMAP &middot;
-    BigQuery &middot; SSP/DSP Integrations &middot; Workflow Automation &middot; Rich Media
-  </p>
+  <ul class="skills-list">
+    {skills.map((skill) => <li>{skill}</li>)}
+  </ul>
   <p>
     Hands-on with the code behind ad delivery: writes and amends JavaScript to build ad creative
     templates — DOM manipulation, conditional logic per placement — for sponsorship and rich media
@@ -73,10 +84,21 @@ const linkedInUrl = 'https://www.linkedin.com/in/devin-l-aaa08117a/';
     font-weight: var(--font-weight-muted);
   }
 
-  .skills-line {
-    color: var(--color-text-muted);
-    font-weight: var(--font-weight-muted);
-    font-size: 0.9375rem;
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    padding: 0;
+    list-style: none;
+  }
+
+  .skills-list li {
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.625rem;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    font-size: 0.875rem;
   }
 
   .role-list,
