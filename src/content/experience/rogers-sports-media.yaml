@@ -25,6 +25,7 @@ stack:
   - Rich media ad formats
   - Git
   - ads.txt / sellers.json
+  - REST API testing
 
 caseStudies:
   - title: "Programmatic Integrations"
@@ -105,3 +106,13 @@ caseStudies:
     outcome: >
       Kept supply chain declarations accurate for Rogers' own inventory and multiple partner
       publishers, using a real git-based publishing workflow.
+
+  - title: "API Testing for Product QA"
+    problem: >
+      Before launching a new version of an internal ad product, its API bridge to WordPress — a
+      fundamental function — needed to be verified working correctly.
+    approach: >
+      Wrote a JavaScript script that calls the endpoint with the proper credentials and checks
+      that the correct JSON information is returned for each site's configuration.
+    outcome: >
+      Runs routinely as part of the QA process before every new version launches to production.
