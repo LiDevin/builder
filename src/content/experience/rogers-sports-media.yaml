@@ -34,11 +34,9 @@ caseStudies:
       vendor), and created new VAST tags to support emerging formats including Google Web Stories
       and vertical video for sports highlights.
     outcome: >
-      TODO — add a specific result once available (e.g. number of partners/formats successfully
-      onboarded, or any fill rate/revenue impact from the new formats).
-    details: >
-      TODO — full write-up: specifics of a particular partner onboarding, and how the vertical
-      video / Web Stories tags differ from a standard VAST tag.
+      Both the new partner integration and the new ad formats (Google Web Stories, vertical
+      video) launched successfully and went live in production. Monetization/revenue performance
+      of these formats sits with a different team and wasn't part of this work.
 
   - title: "Technical Troubleshooting"
     problem: >
