@@ -1,17 +1,17 @@
 :root {
-  --color-bg: #ffffff;
-  --color-surface: #f6f7fb;
-  --color-text: #1a1d21;
-  --color-text-muted: #5a6169;
-  --color-border: #e3e6e9;
-  --color-accent: #2454ff;
-  --color-accent-hover: #1a3fc4;
-  --color-accent-contrast: #ffffff;
-  --color-accent-faint: rgba(36, 84, 255, 0.14);
-  --color-accent-mid: rgba(36, 84, 255, 0.4);
+  --color-bg: #0f1218;
+  --color-surface: #171b23;
+  --color-text: #e9ebf0;
+  --color-text-muted: #9aa3b2;
+  --color-border: #2a2f3a;
+  --color-accent: #6f8dff;
+  --color-accent-hover: #91a8ff;
+  --color-accent-contrast: #0c0e12;
+  --color-accent-faint: rgba(111, 141, 255, 0.16);
+  --color-accent-mid: rgba(111, 141, 255, 0.45);
 
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
-  --shadow-sm-hover: 0 2px 4px rgba(16, 24, 40, 0.06), 0 4px 8px rgba(16, 24, 40, 0.08);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.28), 0 1px 3px rgba(0, 0, 0, 0.36);
+  --shadow-sm-hover: 0 2px 4px rgba(0, 0, 0, 0.32), 0 4px 10px rgba(0, 0, 0, 0.42);
   --transition-fast: 0.15s ease;
 
   --font-sans: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
@@ -33,7 +33,7 @@
 }
 
 html {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 body {
