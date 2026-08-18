@@ -18,6 +18,7 @@ stack:
   - SSP/DSP integrations
   - VAST/VMAP
   - Charles Proxy
+  - Chrome DevTools
   - BigQuery
   - JavaScript
   - Rich media ad formats
@@ -25,32 +26,56 @@ stack:
 caseStudies:
   - title: "Programmatic Integrations"
     problem: >
-      TODO — replace with one specific integration or monetization gap: Rogers' omnichannel properties
-      (Sportsnet, CityNews, CityTV) needed programmatic infrastructure optimized across ad servers
-      (GAM, Magnite) and exchanges. Pick a single integration to walk through here rather than
-      describing the responsibility in general.
+      New video ad partners and new ad formats (Google Web Stories, vertical video for sports
+      highlights) needed to be onboarded onto Sportsnet's video infrastructure, each requiring a
+      correctly-configured VAST tag to work with the existing player setup.
     approach: >
-      TODO — the specific technical steps taken: which systems were touched, what was configured,
-      built, or changed, and why.
+      Built and provided VAST tags for new partner onboarding (e.g. Slimcut, Sportsnet's video
+      vendor), and created new VAST tags to support emerging formats including Google Web Stories
+      and vertical video for sports highlights.
     outcome: >
-      TODO — the measurable result: e.g. fill rate, revenue, or reliability improvement from this
-      specific integration.
+      TODO — add a specific result once available (e.g. number of partners/formats successfully
+      onboarded, or any fill rate/revenue impact from the new formats).
     details: >
-      TODO — full write-up: the situation in more depth, what made it technically tricky, and what
-      you'd do differently next time.
+      TODO — full write-up: specifics of a particular partner onboarding, and how the vertical
+      video / Web Stories tags differ from a standard VAST tag.
 
   - title: "Technical Troubleshooting"
     problem: >
-      TODO — replace with one specific incident: a client-side or server-side ad delivery issue,
-      VAST/VMAP error, or tracking discrepancy that needed root-causing.
+      Impressions dropped significantly site-wide on Sportsnet. Investigating section by section,
+      one specific section had a severe drop — its sponsorship takeover placement had stopped
+      working.
     approach: >
-      TODO — how BigQuery, SSP raw logs, Charles Proxy, and browser developer tools were used to
-      trace the issue to its root cause.
+      Traced the issue through the ad request and found the section wasn't fetching/sending the
+      correct ad unit path (IU) value, so the sponsorship line item had nothing to respond to.
+      Working with a developer, found the root cause: the system was omitting this value whenever
+      a large update was pushed to production.
     outcome: >
-      TODO — what was fixed, and the measurable impact (e.g. error rate reduced, delivery restored,
-      time to resolution).
+      Fixed the immediate issue, then built two lasting safeguards: a scheduled automated check
+      that verifies the ad unit path stays correct on the site, and a manual override tool so the
+      value could be corrected immediately if the issue recurred.
     details: >
-      TODO — full write-up of the debugging process, step by step.
+      Similar debugging elsewhere: when Sportsnet's article pages switched from an infinite-scroll
+      layout to a single-article page design, the Slimcut video player (inserted every few
+      paragraphs) stopped working. Updated the ad rule JS on the backend so the player inserted
+      correctly and fit the new layout.
+
+  - title: "Live Video Ad Troubleshooting"
+    problem: >
+      Pre-roll video ads were missing from Sportsnet's LiveTracker product, which uses client-side
+      ad insertion (CSAI).
+    approach: >
+      Used Chrome DevTools to inspect the ad request in the browser and found two issues: the ad
+      unit path was coming through undefined, and in some cases the wrong video ID was being
+      pulled from Brightcove (the video platform). Flagged the correct values to the developer to
+      fix.
+    outcome: >
+      Pre-roll ads resumed serving normally on LiveTracker. TODO — add a specific metric once
+      available (e.g. how long the issue had been live, or estimated impressions/revenue
+      recovered).
+    details: >
+      TODO — full write-up: how the undefined ad unit path and the Brightcove video ID mismatch
+      were connected, and any monitoring added afterward to catch similar issues earlier.
 
   - title: "Workflow Automation"
     problem: >
