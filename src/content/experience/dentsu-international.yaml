@@ -35,9 +35,8 @@ caseStudies:
     outcome: >
       TODO — the measurable result: e.g. conversion lift, budget efficiency, or performance
       against the campaign's goal.
-    details: >
-      TODO — full write-up: the situation in more depth, what made it tricky across markets, and
-      what you'd do differently next time.
+    details:
+      - "TODO — the situation in more depth, what made it tricky across markets."
 
   - title: "Performance Advisory"
     problem: >
@@ -49,8 +48,8 @@ caseStudies:
     outcome: >
       TODO — the measurable result: e.g. conversion improvement, client retention or budget
       expansion.
-    details: >
-      TODO — full write-up of the advisory process.
+    details:
+      - "TODO — the advisory process in more depth."
 
   - title: "Automated Reporting"
     problem: >
@@ -63,6 +62,5 @@ caseStudies:
       Eliminated manual reporting workflows and delivered real-time insights across APAC and NA
       markets. TODO — add a specific metric once available (e.g. hours saved per week, number of
       markets/campaigns covered).
-    details: >
-      TODO — full write-up: what the manual process looked like before, how the dashboards were
-      built (tools/approach), and any concrete numbers on time saved or reliability gained.
+    details:
+      - "TODO — what the manual process looked like before, and how the dashboards were built."

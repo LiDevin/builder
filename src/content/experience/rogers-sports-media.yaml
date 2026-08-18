@@ -8,10 +8,10 @@ keyProducts:
   - SeekYourSounds.com
 
 overview: >
-  Programmatic ad tech specialist managing omnichannel ad infrastructure across all of Rogers'
-  digital properties, with Sportsnet, CityNews, and SeekYourSounds.com requiring the most ongoing
-  maintenance. Works closely with developers and external vendors to create, test, and launch ad
-  products, and leads deep-dive investigations into ad delivery issues across the inventory backend.
+  Programmatic ad tech specialist managing ad infrastructure across all of Rogers' digital
+  properties, with Sportsnet, CityNews, and SeekYourSounds.com requiring the most maintenance.
+  Works with developers and external vendors to build, test, and launch ad products, and
+  investigates ad delivery issues across the inventory backend.
 
 stack:
   - Google Ad Manager (GAM)
@@ -27,84 +27,64 @@ stack:
 caseStudies:
   - title: "Programmatic Integrations"
     problem: >
-      New video ad partners and new ad formats (Google Web Stories, vertical video for sports
-      highlights) needed to be onboarded onto Sportsnet's video infrastructure, each requiring a
-      correctly-configured VAST tag to work with the existing player setup.
+      New video ad partners and formats (Google Web Stories, vertical video for sports
+      highlights) needed VAST tags to work with Sportsnet's existing player.
     approach: >
-      Built and provided VAST tags for new partner onboarding (e.g. Slimcut, Sportsnet's video
-      vendor), and created new VAST tags to support emerging formats including Google Web Stories
-      and vertical video for sports highlights.
+      Built and provided VAST tags for partner onboarding (e.g. Slimcut) and for new formats,
+      including Google Web Stories and vertical video.
     outcome: >
-      Both the new partner integration and the new ad formats (Google Web Stories, vertical
-      video) launched successfully and went live in production. Monetization/revenue performance
-      of these formats sits with a different team and wasn't part of this work.
+      Both launched successfully and went live in production.
 
   - title: "Technical Troubleshooting"
     problem: >
-      Impressions dropped significantly site-wide on Sportsnet. Investigating section by section,
-      one specific section had a severe drop — its sponsorship takeover placement had stopped
+      Impressions dropped sharply on Sportsnet. One section's sponsorship takeover had stopped
       working.
     approach: >
-      Traced the issue through the ad request and found the section wasn't fetching/sending the
-      correct ad unit path (IU) value, so the sponsorship line item had nothing to respond to.
-      Working with a developer, found the root cause: the system was omitting this value whenever
-      a large update was pushed to production.
+      Traced the ad request and found the section wasn't sending the correct ad unit path (IU),
+      so the sponsorship line item had nothing to respond to. Root cause: the value was dropped
+      whenever a large update went to production.
     outcome: >
-      Fixed the immediate issue, then built two lasting safeguards: a scheduled automated check
-      that verifies the ad unit path stays correct on the site, and a manual override tool so the
-      value could be corrected immediately if the issue recurred.
-    details: >
-      Similar debugging elsewhere: when Sportsnet's article pages switched from an infinite-scroll
-      layout to a single-article page design, the Slimcut video player (inserted every few
-      paragraphs) stopped working. Updated the ad rule JS on the backend so the player inserted
-      correctly and fit the new layout.
+      Fixed the issue, then built two safeguards: a scheduled check that verifies the ad unit
+      path, and a manual override to fix it immediately if it recurs.
+    details:
+      - "A similar issue: Sportsnet's redesign from infinite scroll to a single-article layout broke the Slimcut video player."
+      - "Fixed by updating the ad rule JS so the player inserted correctly in the new layout."
 
   - title: "Live Video Ad Troubleshooting"
     problem: >
-      Pre-roll video ads were missing from Sportsnet's LiveTracker product, which uses client-side
-      ad insertion (CSAI).
+      Pre-roll video ads were missing from Sportsnet's LiveTracker, which uses client-side ad
+      insertion (CSAI).
     approach: >
-      Used Chrome DevTools to inspect the ad request in the browser and found two issues: the ad
-      unit path was coming through undefined, and in some cases the wrong video ID was being
-      pulled from Brightcove (the video platform). Flagged the correct values to the developer to
-      fix.
+      Used Chrome DevTools to inspect the ad request and found the ad unit path was undefined,
+      and the wrong video ID was sometimes pulled from Brightcove. Flagged the fix to the
+      developer.
     outcome: >
-      Pre-roll ads resumed serving normally on LiveTracker. Reported by the LiveTracker product
-      manager rather than caught through internal monitoring; resolved as a one-off fix, and
-      monitored impression numbers for the following week to confirm the fix held.
+      Pre-roll ads resumed serving normally; monitored impressions for a week to confirm the fix
+      held.
 
   - title: "Workflow Automation"
     problem: >
-      Checking ad delivery across 200+ digital properties was entirely manual: visiting each site,
-      scrolling to the bottom to trigger every ad request, and inspecting each request one by one.
-      Covering all 200+ properties this way wasn't practical, so the team could only spot-check a
-      sample.
+      Checking ad delivery across 200+ properties was manual: visiting each site, scrolling to
+      trigger every ad request, and inspecting them one by one. Full coverage wasn't practical,
+      so the team could only sample-check.
     approach: >
-      Built a Python script using Selenium for browser automation — it drives a real browser to
-      visit each site (loading ads the same way a person would), captures every ad request from
-      the network tab, and exports it all to Excel, where the team checks it with simple formulas.
-      Runs whenever there's an update to the radio sites, since changes are typically applied
-      across all of them at once.
+      Built a Python script using Selenium to drive a real browser per site, capture ad requests
+      from the network tab, and export them to Excel for the team to check. Runs whenever a
+      radio site update ships.
     outcome: >
-      Replaced manual, sample-only spot checks with full coverage across all 200+ properties every
-      time the script runs — something that wasn't practically possible by hand. Used by the ad
-      tech team internally.
+      Replaced sample-only checks with full coverage across all 200+ properties on every run.
 
   - title: "Rich Media Ad Templates"
     problem: >
       Sponsorship and rich media placements (badges, wallpaper units, homepage takeovers) needed
-      to work across many different page sections on Rogers' properties, each with its own layout
-      — a single static creative wouldn't render correctly everywhere it needed to run.
+      to work across many different page layouts — a single static creative didn't render
+      correctly everywhere.
     approach: >
-      Built and maintained the JavaScript creative template that runs inside the ad iframe: it
-      amends the host page's DOM directly — toggling elements between display: none and block,
-      injecting the sponsorship image and text — branching its logic per placement to handle each
-      section's distinct structure.
+      Built and maintain the JavaScript creative template that runs inside the ad iframe: it
+      edits the host page's DOM directly — toggling elements between display: none and block,
+      injecting the sponsorship image and text — branching per placement to fit each layout.
     outcome: >
-      The template covers Rogers' main properties — CityNews, Sportsnet, and
-      SeekYourSounds.com — and gets extended whenever a site ships a design update, since each
-      redesign can introduce a page layout the template doesn't yet handle.
-    details: >
-      When a redesigned page didn't match any layout the template already covered, the fix wasn't
-      a rewrite — it meant tailoring a new branch of logic for that specific layout and adding it
-      into the existing template alongside the others.
+      Covers Sportsnet, CityNews, and SeekYourSounds.com, and gets extended with every site
+      redesign that introduces a new layout.
+    details:
+      - "A new layout isn't a rewrite — it's a new branch of logic added to the existing template."

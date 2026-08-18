@@ -7,7 +7,7 @@ const caseStudySchema = z.object({
   problem: z.string(),
   approach: z.string(),
   outcome: z.string(),
-  details: z.string().optional(),
+  details: z.array(z.string()).optional(),
 });
 
 const experience = defineCollection({

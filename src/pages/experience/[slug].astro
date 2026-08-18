@@ -42,7 +42,9 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
         {caseStudy.details && (
           <details>
             <summary>Read more</summary>
-            <p>{caseStudy.details}</p>
+            <ul class="details-list">
+              {caseStudy.details.map((point) => <li>{point}</li>)}
+            </ul>
           </details>
         )}
       </article>
@@ -124,5 +126,20 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
 
   details summary:hover {
     color: var(--color-accent-hover);
+  }
+
+  .details-list {
+    margin: var(--space-1) 0 0;
+    padding-left: 1.125rem;
+  }
+
+  .details-list li {
+    margin-block: 0.375rem;
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-muted);
+  }
+
+  .details-list li::marker {
+    color: var(--color-accent);
   }
 </style>
