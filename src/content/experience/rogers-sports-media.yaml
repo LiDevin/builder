@@ -5,11 +5,12 @@ location: "Toronto, Ontario, Canada"
 keyProducts:
   - Sportsnet
   - CityNews
-  - CityTV
+  - SeekYourSounds.com
 
 overview: >
-  Programmatic ad tech specialist managing omnichannel ad infrastructure across Sportsnet, CityNews,
-  and CityTV. Works closely with developers and external vendors to create, test, and launch ad
+  Programmatic ad tech specialist managing omnichannel ad infrastructure across all of Rogers'
+  digital properties, with Sportsnet, CityNews, and SeekYourSounds.com requiring the most ongoing
+  maintenance. Works closely with developers and external vendors to create, test, and launch ad
   products, and leads deep-dive investigations into ad delivery issues across the inventory backend.
 
 stack:
@@ -100,8 +101,10 @@ caseStudies:
       injecting the sponsorship image and text — branching its logic per placement to handle each
       section's distinct structure.
     outcome: >
-      TODO — add a specific metric once available (e.g. number of sections/placements supported,
-      reduction in one-off dev requests for new creative variants).
+      The template covers Rogers' main properties — CityNews, Sportsnet, and
+      SeekYourSounds.com — and gets extended whenever a site ships a design update, since each
+      redesign can introduce a page layout the template doesn't yet handle.
     details: >
-      TODO — full write-up: specific placements/sections handled, and how new creative variants
-      get added to the template today.
+      When a redesigned page didn't match any layout the template already covered, the fix wasn't
+      a rewrite — it meant tailoring a new branch of logic for that specific layout and adding it
+      into the existing template alongside the others.
