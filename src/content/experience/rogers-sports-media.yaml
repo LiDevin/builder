@@ -74,17 +74,20 @@ caseStudies:
 
   - title: "Workflow Automation"
     problem: >
-      Reporting across 200+ digital properties was a manual bottleneck, limiting data transparency
-      for the team.
+      Checking ad delivery across 200+ digital properties was entirely manual: visiting each site,
+      scrolling to the bottom to trigger every ad request, and inspecting each request one by one.
+      Covering all 200+ properties this way wasn't practical, so the team could only spot-check a
+      sample.
     approach: >
-      Identified the bottleneck and developed an automated web-scraping solution covering all 200+
-      properties.
+      Built a Python script using Selenium for browser automation — it drives a real browser to
+      visit each site (loading ads the same way a person would), captures every ad request from
+      the network tab, and exports it all to Excel, where the team checks it with simple formulas.
+      Runs whenever there's an update to the radio sites, since changes are typically applied
+      across all of them at once.
     outcome: >
-      Significantly improved data transparency and reporting efficiency. TODO — add a specific
-      metric once available (e.g. hours saved per week, error rate before/after).
-    details: >
-      TODO — full write-up: what the manual process looked like before, how the scraper was built
-      (tools/approach), and any concrete numbers on time saved or reliability gained.
+      Replaced manual, sample-only spot checks with full coverage across all 200+ properties every
+      time the script runs — something that wasn't practically possible by hand. Used by the ad
+      tech team internally.
 
   - title: "Rich Media Ad Templates"
     problem: >
