@@ -29,6 +29,7 @@ stack:
 
 caseStudies:
   - title: "Programmatic Integrations"
+    teaser: "Onboarded new video partners and built VAST tags for emerging ad formats."
     problem: >
       New video ad partners and formats (Google Web Stories, vertical video for sports
       highlights) needed VAST tags to work with Sportsnet's existing player.
@@ -39,6 +40,7 @@ caseStudies:
       Both launched successfully and went live in production.
 
   - title: "Technical Troubleshooting"
+    teaser: "Traced a sitewide impressions drop to a systemic bug and built lasting safeguards."
     problem: >
       Impressions dropped sharply on Sportsnet. One section's sponsorship takeover had stopped
       working.
@@ -55,6 +57,7 @@ caseStudies:
       - "Also uses the command line (ls, cd, mkdir) to run a developer-built function that manually refreshes site cache when needed."
 
   - title: "Live Video Ad Troubleshooting"
+    teaser: "Used Chrome DevTools to fix missing pre-roll ads on Sportsnet's LiveTracker."
     problem: >
       Pre-roll video ads were missing from Sportsnet's LiveTracker, which uses client-side ad
       insertion (CSAI).
@@ -67,6 +70,7 @@ caseStudies:
       held.
 
   - title: "Workflow Automation"
+    teaser: "Replaced manual, sample-only ad checks with full automated coverage across 200+ sites."
     problem: >
       Checking ad delivery across 200+ properties was manual: visiting each site, scrolling to
       trigger every ad request, and inspecting them one by one. Full coverage wasn't practical,
@@ -79,6 +83,7 @@ caseStudies:
       Replaced sample-only checks with full coverage across all 200+ properties on every run.
 
   - title: "Rich Media Ad Templates"
+    teaser: "Built the JavaScript template powering sponsorship and rich media placements sitewide."
     problem: >
       Sponsorship and rich media placements (badges, wallpaper units, homepage takeovers) needed
       to work across many different page layouts — a single static creative didn't render
@@ -94,6 +99,7 @@ caseStudies:
       - "A new layout isn't a rewrite — it's a new branch of logic added to the existing template."
 
   - title: "Supply Chain File Management"
+    teaser: "Manages ads.txt/sellers.json for Rogers and partner publishers via a git-based workflow."
     problem: >
       Rogers' own ads.txt/sellers.json (hosted on Akamai) and partner publishers' ads.txt files
       needed to stay accurate as inventory relationships changed — errors here can break
@@ -108,6 +114,7 @@ caseStudies:
       publishers, using a real git-based publishing workflow.
 
   - title: "API Testing for Product QA"
+    teaser: "Wrote a JS script that verifies a core product API before every production launch."
     problem: >
       Before launching a new version of an internal ad product, its API bridge to WordPress — a
       fundamental function — needed to be verified working correctly.

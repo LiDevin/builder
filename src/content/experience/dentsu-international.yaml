@@ -24,6 +24,7 @@ stack:
 
 caseStudies:
   - title: "DSP Management"
+    teaser: "Diagnosed a festival-driven bid war and saved cost while exceeding conversion targets."
     problem: >
       A British Council campaign was under-pacing at its existing bid — holding the same brand
       exposure would need more budget.
@@ -35,6 +36,7 @@ caseStudies:
       Held brand exposure at lower cost and exceeded the year-end online conversion target.
 
   - title: "Performance Advisory"
+    teaser: "Used floodlight tracking and retargeting to lower CPA for an online insurer."
     problem: >
       Blue Insurance wanted more completed online quotations, but cost per acquisition (CPA) was
       too high.
@@ -45,6 +47,7 @@ caseStudies:
       More precise bidding and a lower CPA.
 
   - title: "Automated Reporting"
+    teaser: "Centralized fragmented multi-market data, cutting report turnaround from a week to a day."
     problem: >
       Multi-market campaign data was fragmented across APAC and North America, requiring manual
       workflows to piece together insights.

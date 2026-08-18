@@ -4,6 +4,7 @@ import { z } from 'zod';
 
 const caseStudySchema = z.object({
   title: z.string(),
+  teaser: z.string(),
   problem: z.string(),
   approach: z.string(),
   outcome: z.string(),

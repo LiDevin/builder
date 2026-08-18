@@ -34,38 +34,46 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
   <h2>Case Studies</h2>
   <div class="case-study-list">
     {caseStudies.map((caseStudy) => (
-      <article class="case-study">
-        <h3>{caseStudy.title}</h3>
-        <div class="stage stage--problem">
-          <div class="stage__bar"></div>
-          <div class="stage__body">
-            <span class="stage__label">Problem</span>
-            <p class="stage__text">{caseStudy.problem}</p>
+      <details class="case-study">
+        <summary class="case-study__summary">
+          <div class="case-study__summary-text">
+            <h3>{caseStudy.title}</h3>
+            <p class="case-study__teaser">{caseStudy.teaser}</p>
           </div>
-        </div>
-        <div class="stage stage--approach">
-          <div class="stage__bar"></div>
-          <div class="stage__body">
-            <span class="stage__label">Approach</span>
-            <p class="stage__text">{caseStudy.approach}</p>
+          <span class="case-study__chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="case-study__body">
+          <div class="stage stage--problem">
+            <div class="stage__bar"></div>
+            <div class="stage__body">
+              <span class="stage__label">Problem</span>
+              <p class="stage__text">{caseStudy.problem}</p>
+            </div>
           </div>
-        </div>
-        <div class="stage stage--outcome">
-          <div class="stage__bar"></div>
-          <div class="stage__body">
-            <span class="stage__label">Outcome</span>
-            <p class="stage__text">{caseStudy.outcome}</p>
+          <div class="stage stage--approach">
+            <div class="stage__bar"></div>
+            <div class="stage__body">
+              <span class="stage__label">Approach</span>
+              <p class="stage__text">{caseStudy.approach}</p>
+            </div>
           </div>
+          <div class="stage stage--outcome">
+            <div class="stage__bar"></div>
+            <div class="stage__body">
+              <span class="stage__label">Outcome</span>
+              <p class="stage__text">{caseStudy.outcome}</p>
+            </div>
+          </div>
+          {caseStudy.details && (
+            <details class="read-more">
+              <summary>Read more</summary>
+              <ul class="details-list">
+                {caseStudy.details.map((point) => <li>{point}</li>)}
+              </ul>
+            </details>
+          )}
         </div>
-        {caseStudy.details && (
-          <details>
-            <summary>Read more</summary>
-            <ul class="details-list">
-              {caseStudy.details.map((point) => <li>{point}</li>)}
-            </ul>
-          </details>
-        )}
-      </article>
+      </details>
     ))}
   </div>
 </Layout>
@@ -112,19 +120,58 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
     border-radius: 0.5rem;
     background: var(--color-surface);
     box-shadow: var(--shadow-sm);
-    padding: var(--space-3);
     transition: box-shadow var(--transition-fast);
   }
 
   /* Subtle lift on hover for tactile feedback — no color/cursor change,
-     since this card isn't a link. */
+     since the card itself isn't a link (the summary row is what's
+     interactive). */
   .case-study:hover {
     box-shadow: var(--shadow-sm-hover);
   }
 
-  .case-study h3 {
+  .case-study__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .case-study__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .case-study__summary-text h3 {
     margin-block-start: 0;
-    margin-block-end: var(--space-1);
+    margin-block-end: 0.25rem;
+  }
+
+  .case-study__teaser {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-muted);
+    font-size: 0.9375rem;
+  }
+
+  .case-study__chevron {
+    flex: none;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-right: 2px solid var(--color-text-muted);
+    border-bottom: 2px solid var(--color-text-muted);
+    transform: rotate(-45deg);
+    transition: transform var(--transition-fast);
+  }
+
+  .case-study[open] .case-study__chevron {
+    transform: rotate(45deg);
+  }
+
+  .case-study__body {
+    padding: 0 var(--space-3) var(--space-3);
   }
 
   .stage {
@@ -173,18 +220,18 @@ const { company, title, dateRange, location, keyProducts, keyAccounts, overview,
     margin: 0;
   }
 
-  details {
+  .read-more {
     margin-top: var(--space-1);
   }
 
-  details summary {
+  .read-more summary {
     cursor: pointer;
     color: var(--color-accent);
     font-size: 0.875rem;
     transition: color var(--transition-fast);
   }
 
-  details summary:hover {
+  .read-more summary:hover {
     color: var(--color-accent-hover);
   }
 
