@@ -26,6 +26,7 @@ stack:
   - Git
   - ads.txt / sellers.json
   - REST API testing
+  - Yield optimization
 
 caseStudies:
   - title: "Programmatic Integrations"
@@ -123,3 +124,18 @@ caseStudies:
       that the correct JSON information is returned for each site's configuration.
     outcome: >
       Runs routinely as part of the QA process before every new version launches to production.
+
+  - title: "Yield Optimization for New Inventory"
+    teaser: "Diagnosed a new partner's low fill rate and fixed it through price floor and pricing rule changes."
+    problem: >
+      A newly onboarded French partner's inventory had a low fill rate on GAM.
+    approach: >
+      Investigated the cause: AdX buyers target campaigns based on an inventory's historical
+      performance, and new inventory typically takes up to 4 weeks to stabilize. The bid range
+      report showed most bids were being rejected, so lowered the price floor to match actual
+      demand. Also found the pricing rule was set to "Optimized" — which sets floors from 2 years
+      of historical seasonal data, poorly suited to brand-new inventory — and switched it to "Set
+      Target CPM," which dynamically adjusts the floor on matching inventory to maximize fill
+      rate.
+    outcome: >
+      After a few weeks, fill rate stabilized and CPM improved.
