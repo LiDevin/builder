@@ -27,6 +27,8 @@ stack:
   - ads.txt / sellers.json
   - REST API testing
   - Yield optimization
+  - LiveIntent
+  - AMP for Email
 
 caseStudies:
   - title: "Programmatic Integrations"
@@ -139,3 +141,14 @@ caseStudies:
       rate.
     outcome: >
       After a few weeks, fill rate stabilized and CPM improved.
+
+  - title: "Newsletter Ad Delivery Troubleshooting"
+    teaser: "Traced broken newsletter ad images to an outdated CNAME and fixed it with a DNS and AMP script update."
+    problem: >
+      Ads were showing broken images in newsletters served through LiveIntent.
+    approach: >
+      Worked with LiveIntent's account manager to trace the cause to an outdated CNAME record.
+      Had the networking team update the CNAME, then updated the AMP script on the newsletter to
+      point to the new location — the CNAME fix alone wasn't enough.
+    outcome: >
+      Broken images resolved.
